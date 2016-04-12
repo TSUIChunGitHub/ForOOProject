@@ -1,0 +1,30 @@
+There are some assumption in design my system.
+1:To make it easy for checking and show the OO Skill, Assume there are four type of user, It is administrator, staff, supervisor and director.
+2:User can create the staff,supervisor,director in the create staff reccod function. In addition, staff must assign to one supervisor
+before create the staff record. Moreover, Due to the requirement methion that only 1 director in system. So ,When user create the director type user to system. The system will check whether contain the director in the system.
+If already contain the director type user, the system will not create the relevant record.
+3:The System only contain one director, and director cannot manage by any user. (Point 3) in the project description)
+4:Director will automatically manage all staff.
+5:For the leave request, To make it easy, Assume one user only can create one leave record.
+6:When staff make the leave request, the request will be pass to her/his supervisor. if supervisor decline the request. 
+Then the request will not pass to director. If the request have approve by supervisor, it will pass to director for futher consider.
+And the director will not see the leave request when the request not approve by supervisor
+7:When superviosor make the request, the request will be pass to director directly for further consider.
+
+In order to make the demo more smooth. There are some user account are already init in the system.
+User:chuntsui Password:1  Type:Administrator
+User:peterwong Password:1 Type:Staff
+User:marywong Password:1 Type:Staff
+User:lalachan Password:1 Type:Staff
+User:benchan Password:1 Type:Supervisor Manage Staff:peterwong,marywong,lalachan
+User:fishlung Password:1 Type:Supervisor
+User:helenchoi Password:1 Type:Supertvisor
+User:bosschan Password:1 Type:Director Manage:All Staff
+
+Where handle the function?
+1.) Create Record Page, Delete Record Page.
+2.) Create Record Page(When user create the staff type user. It must be assign to one supervisor before create the record)
+3.) Create Record Page(User can create the director type user. But the system will check the only contain one director type user record)
+And Assign Staff Page (The System will keepstrack user not able to assign direcor type user for manage)
+4.) Assign Staff Page (User can assign staff type user type to other staff type user for manage and keepstack user cannot manage by many supervisor)
+5.) Maintain Leave Page
